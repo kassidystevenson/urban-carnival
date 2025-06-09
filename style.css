@@ -1,0 +1,171 @@
+/* Add your CSS here */
+/* Global Reset & Fonts */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the main font and background color for the page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6f2ff; /* Light blue background */
+  color: #333f48; /* Intel-like dark steel gray for body text */
+}
+
+/* 🔷 Hero Section */
+/* The hero section uses a blue gradient background for Intel branding */
+.hero {
+  background: linear-gradient(120deg, #0071c5 0%, #00c6fb 50%, #0056a0 100%);
+  color: white;
+  padding: 90px 0 90px 0;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 113, 197, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+}
+
+/* Container for hero content to center and limit width */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Create a column for hero content */
+.hero-column {
+  background: rgba(255,255,255,0.10); /* subtle overlay for contrast */
+  border-radius: 18px;
+  padding: 40px 30px;
+  max-width: 400px;
+  margin: 0 20px;
+  box-shadow: 0 4px 24px rgba(0,113,197,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo image sizing and spacing */
+.logo {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.headline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,113,197,0.15);
+}
+
+/* Headline uses a classic serif font, bold, and large for emphasis */
+.headline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Subheading uses the same serif font, lighter color for contrast */
+.subheading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #dbe9f4;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* 📅 Timeline Section */
+.timeline-section {
+  background-color: #f2f8fd;
+  padding: 60px 20px;
+}
+
+/* Flexbox Timeline Container */
+.timeline-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto; /* Enables horizontal scroll */
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  /* Smooth scrolling for touch devices */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Timeline Cards */
+.milestone-card {
+  flex: 0 0 auto;
+  min-width: 260px;
+  background: #ffffff;
+  border-left: 5px solid #0071c5;
+  border-radius: 8px;
+  padding: 20px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Content */
+.milestone-card h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: #0056a0;
+  font-size: 1.5rem;
+}
+
+.milestone-card .summary {
+  font-weight: 500;
+  color: #0071c5;
+  margin: 10px 0;
+}
+
+.milestone-card .details {
+  font-size: 0.9rem;
+  color: #333f48;
+  display: none;
+}
+
+.milestone-card:hover .details {
+  display: block;
+}
+
+/* Mobile: Stack Vertically */
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: hidden;     /* Remove horizontal scroll */
+  }
+  .milestone-card {
+    min-width: 100%;        /* Cards take full width */
+  }
+}
+
+/* Responsive: make hero column full width on small screens */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 0;
+  }
+  .hero-column {
+    max-width: 95%;
+    padding: 20px 10px;
+  }
+  .headline {
+    font-size: 2rem;
+  }
+  .logo {
+    max-width: 120px;
+  }
+}
+
